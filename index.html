@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce Mini</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body class="body">
+    <div class="containerAlert">
+      <div class="alert">
+        <i class="bi bi-check2-circle"></i>
+        <div>
+          <h1>Thank You.</h1>
+          <p class="desc">
+            Your product has been successfully, <br />
+            check in cart for the details.
+          </p>
+        </div>
+        <a href="#" class="close">Close</a>
+      </div>
+    </div>
+
+    <header class="header">
+      <nav>
+        <div class="title_nav">
+          <h3>ShoppiApps.</h3>
+        </div>
+        <div class="nav_center1">
+          <a href="#home" data-nav-link="home">Home</a>
+          <a href="#product" data-nav-link="product">Product</a>
+        </div>
+        <div class="nav_end">
+          <div style="position: relative" class="responsive">
+            <i class="bi bi-list" id="listHamburger"></i>
+            <div class="nav_center2" id="navbarNav">
+              <a id="menuBar" href="#home"
+                ><i class="bi bi-house" id="menuBar"></i
+              ></a>
+              <a href="#product" id="menuBar"
+                ><i id="menuBar" class="bi bi-card-list"></i
+              ></a>
+            </div>
+          </div>
+          <div class="contentCart" style="position: relative">
+            <a href="#" class="link_items"
+              ><span class="animateCart"></span> <i class="bi bi-cart3"></i
+              ><span class="nav_items">0,</span>
+              <span class="total">(0) </span>Items</a
+            >
+
+            <div class="cart_list">
+              <h4 class="cart_title">Your Product</h4>
+              <hr />
+              <div class="product_list"></div>
+
+              <hr />
+              <div class="desc_total">
+                <p class="total_cart">Total</p>
+                <p class="price_total">
+                  Rp. <span class="price_cart">100.000</span>
+                </p>
+              </div>
+
+              <a href="view_cart.html" class="checkout">View Cart</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="home" id="home" data-scroll-banner>
+      <div>
+        <small>Popular Product</small>
+        <h1>New Brand</h1>
+        <a href="#">Discover Now</a>
+      </div>
+      <div class="container__images">
+        <img class="img1" src="assets/img/bag_hero.jpg" alt="Bag" title="Bag" />
+        <img
+          class="img2"
+          src="assets/img/dress_hero.jpg"
+          alt="Dress"
+          title="Dress"
+        />
+        <img class="img3" src="assets/img/hat_hero.jpg" alt="Hat" title="Hat" />
+        <img
+          class="img4"
+          src="assets/img/shoes_hero.jpg"
+          alt="Shoes"
+          title="Shoes"
+        />
+      </div>
+    </section>
+    <hr />
+
+    <section class="sectionHero">
+      <div class="imgHero1">
+        <div class="text1"><p>Dress</p></div>
+        <img src="assets/img/dress_section.jpg" alt="" />
+      </div>
+      <div class="imgHero2">
+        <div class="text2"><p>Hat</p></div>
+        <img src="assets/img/hat_section.jpg" alt="" />
+      </div>
+      <div class="imgHero3">
+        <div class="text3"><p>Bag</p></div>
+        <img src="assets/img/bag_section.jpg" alt="" />
+      </div>
+      <div class="imgHero4">
+        <div class="text4"><p>Sneaker</p></div>
+        <img src="assets/img/shoes_section.jpg" alt="" />
+      </div>
+    </section>
+
+    <section class="product" data-scroll-banner id="product">
+      <h1>.Our Product.</h1>
+      <p>We sell the best product for you.</p>
+
+      <div class="listFilter">
+        <span id="listFilter" class="active">Dress</span>
+        <span> | </span>
+        <span id="listFilter">Hat</span>
+        <span> | </span>
+        <span id="listFilter">Bag</span>
+        <span> | </span>
+        <span id="listFilter">Sneaker</span>
+      </div>
+
+      <div class="containerProduct"></div>
+    </section>
+    <footer><p>Copyright © Reserved & Built by Fatah Noer.</p></footer>
+  </body>
+</html>
