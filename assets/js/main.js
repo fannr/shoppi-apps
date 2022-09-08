@@ -1,3 +1,7 @@
+totalPrice(true);
+loadCard();
+loadCart(true);
+
 const hamburger = document.querySelector("#listHamburger");
 
 hamburger.addEventListener("click", function () {
@@ -43,53 +47,6 @@ for (const a of elA) {
   a.addEventListener("click", function () {
     document.querySelector(".responsive").classList.remove("active");
   });
-}
-
-loadCard();
-loadCart();
-function loadCart() {
-  const productList = document.querySelector(".product_list");
-
-  if (cartBasket.length > 0) {
-    productList.innerHTML = cartBasket
-      .map((cart) => {
-        let search = cardList.find((card) => card.id === cart.id);
-
-        return `<div class="product_cart">
-      <div>
-        <img
-          class="img_cart"
-          src="assets/img/product_${search.img}.jpg"
-          alt="${search.title}"
-        />
-        <div>
-          <p class="title_cart">${search.title} </p>
-          <p class="qty_list">x${
-            cart.item
-          } <span class="price">(Rp. ${formatRupiah(search.price)})</span></p>
-        </div>
-      </div>
-      <p class="product_price">Rp. ${formatRupiah(search.price * cart.item)}</p>
-      <i class="bi bi-x-lg" onclick=deleteCart(${cart.id})></i>
-    </div>`;
-      })
-      .join("");
-  } else {
-    productList.innerHTML = `<p class="empty">
-      Product is Empty!
-    </p>`;
-  }
-}
-
-totalPrice(true);
-
-function deleteCart(id) {
-  cartBasket = cartBasket.filter((cart) => cart.id != id);
-
-  localStorage.setItem("cart", JSON.stringify(cartBasket));
-  update(null, true);
-  loadCart();
-  totalPrice(true);
 }
 
 function loadCard(filter = "dress") {
@@ -162,18 +119,11 @@ const addCart = (id) => {
   }, 300);
 
   update(null, true);
-  loadCart();
+  loadCart(true);
   totalPrice(true);
 };
 
 update(null, true);
-
-const close = document.querySelector(".close");
-close.addEventListener("click", function (e) {
-  e.preventDefault();
-  document.querySelector(".containerAlert").classList.remove("active");
-  document.querySelector(".alert").classList.remove("active");
-});
 
 const filter = document.querySelectorAll("#listFilter");
 
