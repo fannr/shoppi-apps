@@ -26,6 +26,7 @@ const minusCart = (id) => {
 
   cartBasket = cartBasket.filter((c) => c.item != 0);
 
+  checkItemsLength();
   totalPrice(false);
   loadCart(false);
   update(id, false);
@@ -73,5 +74,3 @@ function checkItemsLength() {
     document.querySelector(".buy").classList.remove("isTrue");
   }
 }
-
-console.log(deleteAll);

@@ -12,7 +12,7 @@ function totalPrice(isTrue) {
     let total = cartBasket
       .map((cart) => {
         let { id, item } = cart;
-        let search = cardList.find((card) => card.id === cart.id);
+        let search = cardList.find((card) => card.id == id);
 
         return search.price * item;
       })
@@ -62,12 +62,13 @@ function deleteCart(id, isTrue) {
 
   if (isTrue) {
     update(null, true);
-    loadCart();
+    loadCart(true);
     totalPrice(true);
   } else {
     update(null, false);
     totalPrice(false);
-    loadCartView();
+    loadCart(false);
+    checkItemsLength();
   }
 }
 
@@ -79,7 +80,7 @@ function loadCart(isTrue) {
     if (cartBasket.length > 0) {
       productList.innerHTML = cartBasket
         .map((cart) => {
-          let search = cardList.find((card) => card.id === cart.id);
+          let search = cardList.find((card) => card.id == cart.id);
 
           return `<div class="product_cart">
         <div>
@@ -98,7 +99,7 @@ function loadCart(isTrue) {
         <p class="product_price">Rp. ${formatRupiah(
           search.price * cart.item
         )}</p>
-        <i class="bi bi-x-lg" onclick=deleteCart(${cart.id}, ${true})></i>
+        <i class="bi bi-x-lg" onclick="deleteCart(${cart.id}, ${true})"></i>
       </div>`;
         })
         .join("");
@@ -111,7 +112,7 @@ function loadCart(isTrue) {
     if (cartBasket.length > 0) {
       tbody.innerHTML = cartBasket
         .map((c, i) => {
-          let search = cardList.find((card) => card.id === c.id);
+          let search = cardList.find((card) => card.id == c.id);
 
           return `<tr>
       <td>
